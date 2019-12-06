@@ -39,6 +39,21 @@ Payload:
     "password": "PASSWORD"  
 }`
 
+##### Message List
+Method: `GET`  
+Endpoint: `/messages/`  
+
+
+##### Add Message
+Method: `POST`  
+Endpoint: `/add/message/`
+Payload:
+`{
+    "title": "message title",
+    "message": "message",
+    "image": "null"
+}`
+
 
 ### Admin Credentials
 ### Username: `admin`  
