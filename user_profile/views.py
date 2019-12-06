@@ -36,7 +36,7 @@ class RegisterAPIView(RegisterView):
         email_address = EmailAddress.objects.get(user=user, email=user.email)
         email_address.verified, email_address.primary = True, True
         email_address.save()
-        send_welcome_mail.delay(user)
+        send_welcome_mail.delay(user.username, user.email)
         return user
 
 class LoginAPIView(LoginView):

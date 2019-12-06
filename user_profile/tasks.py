@@ -9,17 +9,17 @@ url = "http://127.0.0.1:8000/"
 
 
 @shared_task
-def send_welcome_mail(user):
+def send_welcome_mail(username, email):
     body = """
     Hello %s,
     welcome to our website, you can do login now 
     Link: %slogin/
 
     Thank You,
-    """% (user.username, url)
+    """% (username, url)
 
     subject = "Welcome Email"
-    recipients = [user.email]
+    recipients = [email]
 
     try:
         send_email(body, subject, recipients)
