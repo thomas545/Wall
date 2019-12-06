@@ -33,9 +33,9 @@ def send_email(body, subject, recipients, body_type='plain'):
     server = smtplib.SMTP("smtp.gmail.com", 587)
     server.starttls() 
     server.login("example@gmail.com", "123456")
-    sender = "example.gmail.com"
+    sender = "example@gmail.com"
     message = MIMEText(body, body_type)
     message["Subject"] = subject
     message["From"] = sender
-    message["To"] = ', '.join(recipient)
-    server.sendmail(sender, recepinect, message.as_string())
+    message["To"] = ', '.join(recipients)
+    server.sendmail(sender, recipients, message.as_string())
